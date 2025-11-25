@@ -1,0 +1,14 @@
+.donut{
+    display: block;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+    -webkit-mask: radial-gradient(circle, transparent 36%, black 37%);
+    mask: radial-gradient(circle, transparent 36%, black 37%);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

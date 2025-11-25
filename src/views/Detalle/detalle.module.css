@@ -1,0 +1,26 @@
+.mainContainer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100dvw;
+    height: 50px;
+}
+.buttonBack{
+    margin-left: 20px;
+}
+.contentContainer{
+    display: flex;
+    width: 100%;
+}
+.imgContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55%;
+    padding: 20px;
+}
+.descriptionContainer{
+    width: 40%;
+    padding: 20px;
+    margin-right: 20px;
+}

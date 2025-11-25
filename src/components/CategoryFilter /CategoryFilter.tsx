@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ProductCard } from '../ProductCard/ProductCard';
 import { setCategories } from './utils/setCategories';
+import styles from './category.module.css'
 
 interface CategoryFilterProps {
     products : Array<any>
 }
-
+ 
 export const CategoryFilter: React.FC<CategoryFilterProps> = ({products}) => {
 
     const [productsCategories , setProductsCategories] = useState<Array<string>>();
@@ -23,8 +24,8 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({products}) => {
 
     return (
         <div>
-            <div>
-                <select ref={categorySelector} onChange={handleCategoryChange}>
+            <div className={styles.selectorContainer}>
+                <select className={styles.select} ref={categorySelector} onChange={handleCategoryChange}>
                     <option value="all">-- Todo (Selecciona una categoría)</option>
                     {products && productsCategories?.map((item,key)=>{
                             return <option value={item} key={key}>{item.toUpperCase()}</option>
@@ -32,25 +33,20 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({products}) => {
                     }
                 </select>
             </div>
-            <div>
+            <div className={styles.productsContainer}>
                 {products && products.map((item : any, key : any)=>{
 
                                 if(categorySelected != 'all'){
                                     if(categorySelected == item.category){
                                         return <ProductCard 
-                                                key={key}
-                                                id={item.id}
-                                                title={item.title}
-                                                price={item.price}
-                                                image={item.image}/>
+                                                    key={key}
+                                                    item={item}
+                                                />
                                     }
                                 }else{
                                 return <ProductCard 
                                                 key={key}
-                                                id={item.id}
-                                                title={item.title}
-                                                price={item.price}
-                                                image={item.image}/>
+                                                item={item}/>
                                 }
                             })
                     
