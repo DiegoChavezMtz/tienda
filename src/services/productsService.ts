@@ -4,13 +4,13 @@ export const getAllProducts = async ()=>{
 
     try {
         const response = await fetch(URL);
-
+        
         const dataProducts = await response.json()
 
         return dataProducts;
         
     } catch (error) {
-        return error
+        throw new Error('Ocurrió un problema');
         
     }
     
@@ -27,8 +27,7 @@ export const getSingleProduct = async (id : string)=>{
         return dataProduct;
         
     } catch (error) {
-
-        return error
+        throw new Error('Ocurrió un problema');
         
     }
 

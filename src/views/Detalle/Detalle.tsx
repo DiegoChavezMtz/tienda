@@ -28,7 +28,7 @@ export const Detalle: React.FC = () => {
     return (
         <div>
             <div className={styles.mainContainer}>
-                <Link to={'/'}><span className={styles.buttonBack}>{`<- Volver`}</span></Link>
+                <Link to={'/'}><span className={styles.buttonBack}>⬅︎{` Volver`}</span></Link>
             </div>
             {product && 
                 <div className={styles.contentContainer}>

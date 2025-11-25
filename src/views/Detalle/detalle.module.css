@@ -7,6 +7,8 @@
 }
 .buttonBack{
     margin-left: 20px;
+    font-weight: bold;
+    font-size: 20px;
 }
 .contentContainer{
     display: flex;

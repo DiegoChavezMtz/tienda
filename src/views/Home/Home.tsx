@@ -1,17 +1,14 @@
 import React ,{useEffect , useState} from 'react';
 import { CategoryFilter } from '../../components/CategoryFilter /CategoryFilter';
 import { getAllProducts } from '../../services/productsService';
-import { useCart } from '../../hooks/useCart';
 import { Spinner } from '../../components/Spinner/Spinner';
 import { PopUpError } from '../../components/PopUpError.tsx/PopUpError';
+import styles from './detalle.module.css'
+
 export const Home: React.FC = () => {
 
     const [products,setProducts]=useState();
     const [error,setError]=useState(null);
-
-    const {getProducts} = useCart();
-
-    console.log(getProducts())
 
     useEffect(()=>{
         getAllProducts().then(response => setProducts(response))
@@ -19,13 +16,13 @@ export const Home: React.FC = () => {
     },[])
   return (
             <>
-                <div>
+                <div className={products ? styles.homeContainer : styles.homeContainerCenter}>
                     {products ? 
                         <CategoryFilter products={products}/>
-                        : <Spinner/>
+                        : error ? <></> : <Spinner/>
                     }
                 </div>
-                {error && PopUpError}
+                {error && <PopUpError/>}
             </>
         )
 };

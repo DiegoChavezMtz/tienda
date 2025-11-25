@@ -5,9 +5,15 @@
     width: 100dvw;
     height: 100dvh;
     background: rgba(208, 208, 208, 0.357);
+    position: absolute;
+    z-index: 999999;
 }
 
 .popUpContainer{
     width: 20%;
     height: 20;
+    background: white;
+    border-radius: 20px;
+    color: #f59e0b;
+
 }
