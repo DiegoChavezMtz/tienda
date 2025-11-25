@@ -37,26 +37,6 @@ Carrito de compras
 
 ⸻
 
-Estructura del proyecto
-
-src/
-  components/
-    ProductCard/
-    CategoryFilter/
-    Spinner/
-    PopUpError/
-  context/
-    CartContext.tsx
-  hooks/
-    useCart.ts
-  views/
-    Home.tsx
-    ProductDetail.tsx
-  App.tsx
-  main.tsx
-
-
-⸻
 
 API utilizada
 	•	FakeStore API: https://fakestoreapi.com/
@@ -64,17 +44,18 @@ API utilizada
 ⸻
 
 Cómo ejecutar el proyecto
+
 	1.	Clonar el repositorio:
 
-git clone https://github.com/DiegoChavezMtz/tienda.git
+	git clone https://github.com/DiegoChavezMtz/tienda.git
 
 	2.	Instalar dependencias:
 
-npm install
+	npm install
 
 	3.	Ejecutar el entorno de desarrollo:
 
-npm run dev
+	npm run dev
 
 Autor
 
