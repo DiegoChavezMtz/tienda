@@ -1,73 +1,81 @@
-# React + TypeScript + Vite
+Prueba Técnica – React.js E-commerce
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación de e-commerce desarrollada como parte de una prueba técnica. Consume la FakeStore API y permite listar productos, filtrarlos por categoría, ver detalles y gestionar un carrito de compras.
 
-Currently, two official plugins are available:
+⸻
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Tecnologías utilizadas
+	•	React.js + TypeScript
+	•	React Router para navegación
+	•	CSS Modules para el estilado
+	•	Fetch API para consumo de datos
+	•	Hooks (useState, useEffect, useContext)
+	•	Context API para el manejo global del carrito
 
-## React Compiler
+⸻
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Funcionalidades principales
 
-## Expanding the ESLint configuration
+Pantalla principal (Home)
+	•	Listado completo de productos provenientes de FakeStore API
+	•	Componente ProductCard reutilizable
+	•	Filtro dinámico por categorías mediante CategoryFilter
+	•	Manejo de estados de carga con un spinner personalizado
+	•	Manejo de errores de API
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Detalle del producto
+	•	Vista individual con información completa
+	•	Imagen, descripción y precio
+	•	Botón para agregar al carrito
+	•	Navegación al detalle y regreso al Home
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Carrito de compras
+	•	Uso de Context API para almacenar y actualizar el carrito
+	•	Agregar productos desde la lista o desde el detalle
+	•	Contador de productos
+	•	Calculadora de total a pagar
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+⸻
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Estructura del proyecto
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+src/
+  components/
+    ProductCard/
+    CategoryFilter/
+    Spinner/
+    PopUpError/
+  context/
+    CartContext.tsx
+  hooks/
+    useCart.ts
+  views/
+    Home.tsx
+    ProductDetail.tsx
+  App.tsx
+  main.tsx
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+⸻
+
+API utilizada
+	•	FakeStore API: https://fakestoreapi.com/
+
+⸻
+
+Cómo ejecutar el proyecto
+	1.	Clonar el repositorio:
+
+git clone https://github.com/DiegoChavezMtz/tienda.git
+
+	2.	Instalar dependencias:
+
+npm install
+
+	3.	Ejecutar el entorno de desarrollo:
+
+npm run dev
+
+Autor
+
+Diego Chávez Martínez
