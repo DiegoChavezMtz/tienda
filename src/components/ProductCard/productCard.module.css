@@ -1,0 +1,14 @@
+.container{
+    height: 200px;
+    margin: 10px;
+}
+.titleContainer{
+    height: 10%;
+}
+.imgContainer{
+    height: 80%;
+    
+}
+.img{
+    height: 100%;
+}
